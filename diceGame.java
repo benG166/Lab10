@@ -203,7 +203,7 @@ public class diceGame {
                         break;
                     case "B", "b":
                         buffcheck = true;
-                        System.out.println("Buffing! +5 to your next attack roll and damage");
+                        System.out.println("Buffing! +" + buff + " to your next attack roll and damage");
                         break;
                     default:
                         System.out.println("Invalid input");
@@ -217,8 +217,8 @@ public class diceGame {
                 int damage = 0;
                 System.out.print("You rolled: " + attackRoll);
                 if (buffcheck) {
-                    attackRoll += 5;
-                    System.out.print(" + 5 (buff active)\n");
+                    attackRoll += buff;
+                    System.out.print(" + " + buff + " (buff active)\n");
                 } else {
                     System.out.println();
                 }
@@ -226,9 +226,9 @@ public class diceGame {
                     damage = rng.nextInt(8) + 1;
                     damage += rng.nextInt(8) + 1;
                     if (buffcheck) {
-                        damage += 5;
+                        damage += buff;
                     }
-                    if (attackRoll == 20 || (buffcheck && attackRoll == 20 + 5)) {
+                    if (attackRoll == 20 || (buffcheck && attackRoll == 20 + buff)) {
                         damage *= 2;
                         System.out.print("Critical hit! ");
                     }
