@@ -1,4 +1,4 @@
-public
+// public
 
 import java.util.Random;
 import java.util.Scanner;
@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class diceGame {
     static Scanner scan = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    {
         Q1();
         Q2();
         Q3();
