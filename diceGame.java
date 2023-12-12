@@ -134,7 +134,7 @@ public class diceGame {
         } else if (num2 == 7 && num2 > 30) {
             System.out.println("July");
         } else if (num2 == 8) {
-            System.out.println("Augst");
+            System.out.println("August");
         } else if (num2 == 9) {
             System.out.println("September");
         } else if (num2 == 10 && num2 > 30) {
