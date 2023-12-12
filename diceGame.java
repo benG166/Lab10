@@ -185,7 +185,7 @@ public class diceGame {
         System.out.println("Q4: Your damage is 2-16 (2d8)");
 
         int enemyHP = 100;
-        int a = 0;
+        int turns = 0;
 
         boolean check = false;
         while (true) {
@@ -210,7 +210,7 @@ public class diceGame {
             }
 
             if (doAttack) {
-                a++;
+                turns++;
                 int attackRoll = rng.nextInt(20) + 1;
                 int damage = 0;
                 System.out.print("You rolled: " + attackRoll);
@@ -243,7 +243,7 @@ public class diceGame {
 
                 check = false;
                 if (enemyHP <= 0) {
-                    System.out.println("Enemy died in " + a + " turns");
+                    System.out.println("Enemy died in " + turns + " turns");
                     scan.close();
                     return;
                 }
