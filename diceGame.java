@@ -178,12 +178,14 @@ public class diceGame {
         Random rng = new Random();
 
         int buff = 5;
+        int armorclass = 12;
 
         String next;
         System.out.println(
                 "Q4: Let's play a game. Type \"A\" to attack, \"B\" to buff your next attack. Kill the enemy to win!");
         System.out.println(
-                "Q4: You must roll higher than the enemy armor class (12) to hit. Roll 20 for a critical hit!");
+                "Q4: You must roll higher than the enemy armor class (" + armorclass
+                        + ") to hit. Roll 20 for a critical hit!");
         System.out.println("Q4: Your damage is 2-16 (2d8)");
 
         int enemyHP = 100;
@@ -222,7 +224,7 @@ public class diceGame {
                 } else {
                     System.out.println();
                 }
-                if (attackRoll >= 12) {
+                if (attackRoll >= armorclass) {
                     damage = rng.nextInt(8) + 1;
                     damage += rng.nextInt(8) + 1;
                     if (buffcheck) {
