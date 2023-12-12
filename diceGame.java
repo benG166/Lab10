@@ -123,25 +123,25 @@ public class diceGame {
             System.out.println("January");
         } else if (num2 == 2) {
             System.out.println("February");
-        } else if (num2 == 3 && num2 > 28) {
+        } else if (num2 == 3 && num <= 28) {
             System.out.println("March");
         } else if (num2 == 4) {
             System.out.println("April");
-        } else if (num2 == 5 && num2 > 30) {
+        } else if (num2 == 5 && num <= 30) {
             System.out.println("May");
         } else if (num2 == 6) {
             System.out.println("June");
-        } else if (num2 == 7 && num2 > 30) {
+        } else if (num2 == 7 && num <= 30) {
             System.out.println("July");
         } else if (num2 == 8) {
             System.out.println("August");
         } else if (num2 == 9) {
             System.out.println("September");
-        } else if (num2 == 10 && num2 > 30) {
+        } else if (num2 == 10 && num <= 30) {
             System.out.println("October");
         } else if (num2 == 11) {
             System.out.println("November");
-        } else if (num2 == 12 && num2 > 30) {
+        } else if (num2 == 12 && num <= 30) {
             System.out.println("December");
         } else {
             System.out.println("Invalid month");
