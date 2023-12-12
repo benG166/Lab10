@@ -179,6 +179,7 @@ public class diceGame {
 
         int buff = 5;
         int armorclass = 12;
+        int critrate = 20;
 
         String next;
         System.out.println(
@@ -230,7 +231,7 @@ public class diceGame {
                     if (buffcheck) {
                         damage += buff;
                     }
-                    if (attackRoll == 20 || (buffcheck && attackRoll == 20 + buff)) {
+                    if (attackRoll >= critrate || (buffcheck && attackRoll >= critrate + buff)) {
                         damage *= 2;
                         System.out.print("Critical hit! ");
                     }
