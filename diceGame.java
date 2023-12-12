@@ -177,6 +177,8 @@ public class diceGame {
     public static void Q4() {
         Random rng = new Random();
 
+        int buff = 5;
+
         String next;
         System.out.println(
                 "Q4: Let's play a game. Type \"A\" to attack, \"B\" to buff your next attack. Kill the enemy to win!");
@@ -187,7 +189,7 @@ public class diceGame {
         int enemyHP = 100;
         int turns = 0;
 
-        boolean check = false;
+        boolean buffcheck = false;
         while (true) {
 
             boolean doAttack = false;
@@ -200,7 +202,7 @@ public class diceGame {
                         doAttack = true;
                         break;
                     case "B", "b":
-                        check = true;
+                        buffcheck = true;
                         System.out.println("Buffing! +5 to your next attack roll and damage");
                         break;
                     default:
@@ -214,7 +216,7 @@ public class diceGame {
                 int attackRoll = rng.nextInt(20) + 1;
                 int damage = 0;
                 System.out.print("You rolled: " + attackRoll);
-                if (check) {
+                if (buffcheck) {
                     attackRoll += 5;
                     System.out.print(" + 5 (buff active)\n");
                 } else {
@@ -223,15 +225,15 @@ public class diceGame {
                 if (attackRoll >= 12) {
                     damage = rng.nextInt(8) + 1;
                     damage += rng.nextInt(8) + 1;
-                    if (check) {
+                    if (buffcheck) {
                         damage += 5;
                     }
-                    if (attackRoll == 20 || (check && attackRoll == 20 + 5)) {
+                    if (attackRoll == 20 || (buffcheck && attackRoll == 20 + 5)) {
                         damage *= 2;
                         System.out.print("Critical hit! ");
                     }
                     System.out.print("You dealt " + damage + " damage");
-                    if (check) {
+                    if (buffcheck) {
                         System.out.print(" (buffed attack)");
                     }
                     enemyHP -= damage;
@@ -241,7 +243,7 @@ public class diceGame {
                     System.out.println("Miss");
                 }
 
-                check = false;
+                buffcheck = false;
                 if (enemyHP <= 0) {
                     System.out.println("Enemy died in " + turns + " turns");
                     scan.close();
